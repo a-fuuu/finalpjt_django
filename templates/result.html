@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Astral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>얼마에팔조</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Contact -->
+							<article id="contact" class="panel">
+								<header>
+									<h2>얼마에팔조?</h2>
+								</header>
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-6 col-12-medium">
+                                                {{ title }}
+                                            </div>
+                                            <!-- <div class="col-6 col-12-medium">
+                                                <input type="text" name="email" placeholder="Email" />
+                                            </div> -->
+                                            <div class="col-12">
+                                                {{ category }}
+                                            </div>
+                                            <div class="col-12">
+                                                {{ content }}
+                                            </div>
+                                            <div class="col-12">
+                                                <a href="/">
+                                                    <input type="submit" value="돌아가기" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js"' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+	</body>
+</html>
