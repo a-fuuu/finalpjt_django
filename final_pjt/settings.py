@@ -129,3 +129,11 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+f'''SELECT *
+FROM preprocessing_table
+WHERE product_title LIKE "{}"
+	and product_title LIKE "%13%"
+    and product_title LIKE "%프로%" OR product_title LIKE "%pro%"
+    and product_title NOT LIKE "%맥스%" and product_title NOT LIKE "%max%";'''
