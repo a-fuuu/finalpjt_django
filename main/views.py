@@ -4,7 +4,11 @@ from .models import *
 
 @csrf_exempt
 def main_index(request):
-    return render(request, 'index.html')
+    model_list = get_model()
+    data = {
+        'model_list' : model_list
+    }
+    return render(request, 'index.html', data)
 
 def main_result(request):
     if request.method == 'POST':
@@ -13,9 +17,9 @@ def main_result(request):
         content = request.POST['content']
         price = predict_price(title, content)
         data = {
-            'title' : title,
-            'category' : category,
-            'content' : content,
+            'title': title,
+            'category': category,
+            'content': content,
             'price': round(price[0][0])
         }
-    return render(request, 'result.html',data)
+    return render(request, 'result.html', data)

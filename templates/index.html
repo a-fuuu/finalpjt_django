@@ -6,8 +6,16 @@
 		<title>얼마에팔조</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
 		<noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+        <script>
+        // In your Javascript
+        $(document).ready(function() {
+            $('.js-example-basic-single').select2();
+        });
+        </script>
 	</head>
 	<body class="is-preload">
 
@@ -34,11 +42,12 @@
 											<div class="col-6 col-12-medium">
 												<input type="text" name="title" placeholder="제목" />
 											</div>
-											<!-- <div class="col-6 col-12-medium">
-												<input type="text" name="email" placeholder="Email" />
-											</div> -->
 											<div class="col-12">
-												<input type="text" name="category" placeholder="기종 드롭다운" />
+                                                <select name="category">
+                                                    {% for model in model_list %}
+                                                        <option value="{{ model }}">{{ model }}</option>
+                                                    {% endfor %}
+                                                </select>
 											</div>
 											<div class="col-12">
 												<textarea name="content" placeholder="제품 설명글 (본문)" rows="6"></textarea>
@@ -62,10 +71,11 @@
 			</div>
 
 		<!-- Scripts -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 			<script src="{% static 'js/jquery.min.js' %}"></script>
 			<script src="{% static 'js/browser.min.js' %}"></script>
 			<script src="{% static 'js/breakpoints.min.js' %}"></script>
 			<script src="{% static 'js/util.js"' %}"></script>
 			<script src="{% static 'js/main.js' %}"></script>
 	</body>
-</html>
+</html>3
