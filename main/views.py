@@ -5,8 +5,10 @@ from .models import *
 @csrf_exempt
 def main_index(request):
     model_list = get_model()
+    code_list = get_code()
+    my_list = zip(model_list, code_list)
     data = {
-        'model_list' : model_list
+        'my_list': my_list
     }
     return render(request, 'index.html', data)
 

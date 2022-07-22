@@ -44,8 +44,8 @@
 											</div>
 											<div class="col-12">
                                                 <select name="category">
-                                                    {% for model in model_list %}
-                                                        <option value="{{ model }}">{{ model }}</option>
+                                                    {% for model, code in my_list %}
+                                                        <option value="{{ code }}">{{ model }}</option>
                                                     {% endfor %}
                                                 </select>
 											</div>
