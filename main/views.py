@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from .models import *
+import pandas as pd
 
 @csrf_exempt
 def main_index(request):

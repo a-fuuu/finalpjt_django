@@ -181,10 +181,49 @@ def predict_price(title, content):
     lst = ' '.join(lst)
     print(lst)
 
-    lst_tokend = tokenizer.texts_to_sequences([lst])
-    lst_padded = pad_sequences(lst_tokend, 150)
+    lst_token = tokenizer.texts_to_sequences([lst])
+    lst_padded = pad_sequences(lst_token, 150)
 
     return model.predict(lst_padded)
 
 
+objects = {"MultiHeadAttention": MultiHeadAttention,
+           "TransformerBlock": TransformerBlock,
+           "TokenAndPositionEmbedding": TokenAndPositionEmbedding}
+model = load_model('./main/model.h5', custom_objects=objects)
 
+with open("./main/stopwords.pickle", "rb") as fr:
+    stopwords = pickle.load(fr)
+with open("./main/tokenizer.pickle", "rb") as fr:
+    tokenizer = pickle.load(fr)
+
+okt = Okt()
+spacing = Spacing()
+
+def predict_price(title, content):
+
+    title = re.sub('[^0-9a-zA-Zㄱ-힗]', ' ', title)
+    title = re.sub('[+]', '플러스', title)
+    title = title.lower()
+    content = re.sub('[^ㄱ-힗]', ' ', content)
+    content = content.split()
+    rm = ['삼성', '플러스', '갤럭시', '노트', '폴드', '플립', '폴더', '애플', '아이폰']
+    for txt in rm:
+        for j in range(len(content) - 1, -1, -1):
+            if txt in content[j]:
+                try:
+                    del content[j]
+                except:
+                    pass
+    content = ' '.join(content)
+
+    txt = title + ' ' + content
+
+    lst = okt.morphs(txt, stem=True)
+    lst = [i for i in lst if i not in stopwords]
+    lst = ' '.join(lst)
+
+    lst_token = tokenizer.texts_to_sequences([lst])
+    lst_padded = pad_sequences(lst_token, 150)
+
+    return model.predict(lst_padded)
