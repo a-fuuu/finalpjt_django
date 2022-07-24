@@ -23,6 +23,6 @@ def main_result(request):
             'title': title,
             'category': category,
             'content': content,
-            'price': round(price[0][0])
+            'price': int(round(price[0][0], -3))
         }
     return render(request, 'result.html', data)

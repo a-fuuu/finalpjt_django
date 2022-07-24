@@ -34,15 +34,15 @@
                         <!-- Me -->
 							<article id="home" class="panel intro">
 								<header>
-									<h1>얼마에 팔조?</h1>
-									<p>
-                                        안녕하세요! 텍스트를 기반으로 중고 스마트폰의 판매 적정가를
+									<h1>안녕하세요!</h1>
+									<p style="font-size: 15px">
+                                        텍스트를 기반으로 중고 스마트폰의 판매 적정가를
                                         책정해주는 서비스입니다.
                                     </p>
 								</header>
 								<a href="#contact" class="jumplink pic">
 									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-									<img src="{% static 'images/me.jpg' %}" alt="" />
+									<img src="{% static 'images/pic05.jpg' %}" alt="" />
 								</a>
 							</article>
 
@@ -63,7 +63,7 @@
 											<div class="col-12">
                                                 <select name="category">
                                                     {% for model, code in my_list %}
-                                                        <option value="{{ code }}">{{ model }}</option>
+                                                        <option value="{{ model }}">{{ model }}</option>
                                                     {% endfor %}
                                                 </select>
 											</div>
@@ -81,12 +81,12 @@
 
                         <!-- Work -->
 							<article id="work" class="panel">
-								<header>
-									<h2>대시보드</h2>
-								</header>
-								<p>
-                                    중고거래 대표 플랫폼인 중고나라, 당근마켓, 번개장터의 스마트폰 거래현황판입니다.
-								</p>
+{#								<header>#}
+{#									<h2>대시보드</h2>#}
+{#								</header>#}
+{#								<p>#}
+{#                                    중고거래 대표 플랫폼인 중고나라, 당근마켓, 번개장터의 스마트폰 거래현황판입니다.#}
+{#								</p>#}
 								<section>
 									<div class="row">
 										<div class='tableauPlaceholder' id='viz1658497968218' style='position: relative'>
@@ -115,9 +115,11 @@
                                         <script type='text/javascript'>
                                             var divElement = document.getElementById('viz1658497968218');
                                             var vizElement = divElement.getElementsByTagName('object')[0];
-                                            if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1600px';vizElement.style.height='927px';}
-                                            else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1600px';vizElement.style.height='927px';}
-                                            else { vizElement.style.width='100%';vizElement.style.height='727px';}
+                                            {#if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1600px';vizElement.style.height='927px';}#}
+                                            {#else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1600px';vizElement.style.height='927px';}#}
+                                            {#else { vizElement.style.width='100%';vizElement.style.height='727px';}#}
+                                            vizElement.style.width='1600px';
+                                            vizElement.style.height='927px';
                                             var scriptElement = document.createElement('script');
                                             scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                                             vizElement.parentNode.insertBefore(scriptElement, vizElement);
@@ -129,7 +131,8 @@
 				<!-- Footer -->
 					<div id="footer">
 						<ul class="copyright">
-							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; Untitled.</li>
+                            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
 					</div>
 
@@ -143,4 +146,4 @@
 			<script src="{% static 'js/util.js"' %}"></script>
 			<script src="{% static 'js/main.js' %}"></script>
 	</body>
-</html>3
+</html>
