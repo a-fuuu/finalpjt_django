@@ -1,0 +1,858 @@
+  File "manage.py", line 17
+    ) from exc
+         ^
+SyntaxError: invalid syntax
+Watching for file changes with StatReloader
+[24/Jul/2022 10:27:19] "GET / HTTP/1.1" 200 17688
+[24/Jul/2022 10:27:19] "GET /static/css/main.css HTTP/1.1" 304 0
+[24/Jul/2022 10:27:19] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[24/Jul/2022 10:27:19] "GET /static/js/browser.min.js HTTP/1.1" 304 0
+[24/Jul/2022 10:27:20] "GET /static/css/fontawesome-all.min.css HTTP/1.1" 304 0
+[24/Jul/2022 10:27:20] "GET /static/js/breakpoints.min.js HTTP/1.1" 304 0
+[24/Jul/2022 10:27:20] "GET /static/js/util.js%22 HTTP/1.1" 404 1808
+[24/Jul/2022 10:27:20] "GET /static/js/main.js HTTP/1.1" 304 0
+[24/Jul/2022 10:27:20] "GET /static/images/pic05.jpg HTTP/1.1" 304 0
+[24/Jul/2022 10:27:20] "GET /static/css/images/overlay.png HTTP/1.1" 304 0
+[24/Jul/2022 10:27:20] "GET /static/css/images/bg.jpg HTTP/1.1" 304 0
+[24/Jul/2022 10:27:20] "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+Internal Server Error: /result/
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/srv/finalpjt_django/main/views.py", line 21, in main_result
+    price = predict_price(title, content)
+  File "/srv/finalpjt_django/main/models.py", line 229, in predict_price
+    return model.predict(lst_padded)
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/tensorflow/python/eager/execute.py", line 58, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InternalError:  Attempting to perform BLAS operation using StreamExecutor without BLAS support
+	 [[node model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/MatMul
+ (defined at /home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/layers/core/dense.py:202)
+]] [Op:__inference_predict_function_3090]
+
+Errors may have originated from an input operation.
+Input Source operations connected to node model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/MatMul:
+In[0] model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/Reshape:	
+In[1] model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/ReadVariableOp:
+
+Operation defined at: (most recent call last)
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/threading.py", line 930, in _bootstrap
+>>>     self._bootstrap_inner()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+>>>     self.run()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/threading.py", line 910, in run
+>>>     self._target(*self._args, **self._kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/socketserver.py", line 683, in process_request_thread
+>>>     self.finish_request(request, client_address)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/socketserver.py", line 360, in finish_request
+>>>     self.RequestHandlerClass(request, client_address, self)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/socketserver.py", line 747, in __init__
+>>>     self.handle()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/servers/basehttp.py", line 178, in handle
+>>>     self.handle_one_request()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/servers/basehttp.py", line 201, in handle_one_request
+>>>     handler.run(self.server.get_app())
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/wsgiref/handlers.py", line 137, in run
+>>>     self.result = application(self.environ, self.start_response)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/contrib/staticfiles/handlers.py", line 76, in __call__
+>>>     return self.application(environ, start_response)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/wsgi.py", line 133, in __call__
+>>>     response = self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/base.py", line 130, in get_response
+>>>     response = self._middleware_chain(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+>>>     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+>>> 
+>>>   File "/srv/finalpjt_django/main/views.py", line 21, in main_result
+>>>     price = predict_price(title, content)
+>>> 
+>>>   File "/srv/finalpjt_django/main/models.py", line 229, in predict_price
+>>>     return model.predict(lst_padded)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1789, in predict
+>>>     tmp_batch_outputs = self.predict_function(iterator)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1621, in predict_function
+>>>     return step_function(self, iterator)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1611, in step_function
+>>>     outputs = model.distribute_strategy.run(run_step, args=(data,))
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1604, in run_step
+>>>     outputs = model.predict_step(data)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1572, in predict_step
+>>>     return self(x, training=False)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/functional.py", line 451, in call
+>>>     return self._run_internal_graph(
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/functional.py", line 589, in _run_internal_graph
+>>>     outputs = node.layer(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/srv/finalpjt_django/main/models.py", line 110, in call
+>>>     attn_output = self.att(inputs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/srv/finalpjt_django/main/models.py", line 68, in call
+>>>     query = self.query_dense(inputs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/layers/core/dense.py", line 202, in call
+>>>     outputs = tf.tensordot(inputs, self.kernel, [[rank - 1], [0]])
+>>> 
+[24/Jul/2022 10:27:51] "POST /result/ HTTP/1.1" 500 122448
+[24/Jul/2022 11:43:10] "GET / HTTP/1.1" 200 17688
+[24/Jul/2022 11:43:10] "GET /static/css/main.css HTTP/1.1" 200 36064
+[24/Jul/2022 11:43:10] "GET /static/css/fontawesome-all.min.css HTTP/1.1" 200 59401
+[24/Jul/2022 11:43:10] "GET /static/js/jquery.min.js HTTP/1.1" 200 89501
+[24/Jul/2022 11:43:10] "GET /static/js/browser.min.js HTTP/1.1" 200 2050
+[24/Jul/2022 11:43:10] "GET /static/js/breakpoints.min.js HTTP/1.1" 200 2438
+[24/Jul/2022 11:43:10] "GET /static/js/main.js HTTP/1.1" 200 4227
+[24/Jul/2022 11:43:10] "GET /static/js/util.js%22 HTTP/1.1" 404 1808
+[24/Jul/2022 11:43:10] "GET /static/css/images/overlay.png HTTP/1.1" 200 3535
+[24/Jul/2022 11:43:10] "GET /static/images/pic05.jpg HTTP/1.1" 200 5560
+[24/Jul/2022 11:43:10] "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 78268
+[24/Jul/2022 11:43:10] "GET /static/css/images/bg.jpg HTTP/1.1" 200 20035
+Not Found: /favicon.ico
+[24/Jul/2022 11:43:12] "GET /favicon.ico HTTP/1.1" 404 2447
+Internal Server Error: /result/
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/srv/finalpjt_django/main/views.py", line 21, in main_result
+    price = predict_price(title, content)
+  File "/srv/finalpjt_django/main/models.py", line 229, in predict_price
+    return model.predict(lst_padded)
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/tensorflow/python/eager/execute.py", line 58, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InternalError:  Attempting to perform BLAS operation using StreamExecutor without BLAS support
+	 [[node model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/MatMul
+ (defined at /home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/layers/core/dense.py:202)
+]] [Op:__inference_predict_function_3090]
+
+Errors may have originated from an input operation.
+Input Source operations connected to node model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/MatMul:
+In[0] model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/Reshape:	
+In[1] model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/ReadVariableOp:
+
+Operation defined at: (most recent call last)
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/threading.py", line 930, in _bootstrap
+>>>     self._bootstrap_inner()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+>>>     self.run()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/threading.py", line 910, in run
+>>>     self._target(*self._args, **self._kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/socketserver.py", line 683, in process_request_thread
+>>>     self.finish_request(request, client_address)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/socketserver.py", line 360, in finish_request
+>>>     self.RequestHandlerClass(request, client_address, self)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/socketserver.py", line 747, in __init__
+>>>     self.handle()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/servers/basehttp.py", line 178, in handle
+>>>     self.handle_one_request()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/servers/basehttp.py", line 201, in handle_one_request
+>>>     handler.run(self.server.get_app())
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/wsgiref/handlers.py", line 137, in run
+>>>     self.result = application(self.environ, self.start_response)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/contrib/staticfiles/handlers.py", line 76, in __call__
+>>>     return self.application(environ, start_response)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/wsgi.py", line 133, in __call__
+>>>     response = self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/base.py", line 130, in get_response
+>>>     response = self._middleware_chain(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+>>>     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+>>> 
+>>>   File "/srv/finalpjt_django/main/views.py", line 21, in main_result
+>>>     price = predict_price(title, content)
+>>> 
+>>>   File "/srv/finalpjt_django/main/models.py", line 229, in predict_price
+>>>     return model.predict(lst_padded)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1789, in predict
+>>>     tmp_batch_outputs = self.predict_function(iterator)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1621, in predict_function
+>>>     return step_function(self, iterator)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1611, in step_function
+>>>     outputs = model.distribute_strategy.run(run_step, args=(data,))
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1604, in run_step
+>>>     outputs = model.predict_step(data)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1572, in predict_step
+>>>     return self(x, training=False)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/functional.py", line 451, in call
+>>>     return self._run_internal_graph(
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/functional.py", line 589, in _run_internal_graph
+>>>     outputs = node.layer(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/srv/finalpjt_django/main/models.py", line 110, in call
+>>>     attn_output = self.att(inputs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/srv/finalpjt_django/main/models.py", line 68, in call
+>>>     query = self.query_dense(inputs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/layers/core/dense.py", line 202, in call
+>>>     outputs = tf.tensordot(inputs, self.kernel, [[rank - 1], [0]])
+>>> 
+[24/Jul/2022 11:43:29] "POST /result/ HTTP/1.1" 500 122424
+Not Found: /로
+[24/Jul/2022 11:45:49] "GET /ë¡ HTTP/1.1" 404 2429
+Not Found: /로
+[24/Jul/2022 11:46:05] "GET /%EB%A1%9C HTTP/1.1" 404 2429
+Not Found: /로
+[24/Jul/2022 11:46:21] "GET /%EB%A1%9C HTTP/1.1" 404 2429
+Not Found: /로
+[24/Jul/2022 11:46:28] "GET /%EB%A1%9C HTTP/1.1" 404 2429
+Not Found: /apple-touch-icon-precomposed.png
+[24/Jul/2022 11:46:30] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 2510
+Not Found: /apple-touch-icon.png
+Not Found: /favicon.ico
+[24/Jul/2022 11:46:30] "GET /apple-touch-icon.png HTTP/1.1" 404 2474
+[24/Jul/2022 11:46:30] "GET /favicon.ico HTTP/1.1" 404 2447
+Not Found: /로
+[24/Jul/2022 11:46:38] "GET /%EB%A1%9C HTTP/1.1" 404 2429
+Not Found: /favicon.ico
+[24/Jul/2022 11:46:38] "GET /favicon.ico HTTP/1.1" 404 2447
+[24/Jul/2022 11:46:40,984] - Broken pipe from ('114.203.107.84', 64821)
+
+[24/Jul/2022 11:46:40,984] - Broken pipe from ('114.203.107.84', 64822)
+
+[24/Jul/2022 11:46:40,985] - Broken pipe from ('114.203.107.84', 64820)
+
+[24/Jul/2022 11:46:40,986] - Broken pipe from ('114.203.107.84', 64823)
+
+[24/Jul/2022 11:46:41] "GET / HTTP/1.1" 200 17688
+[24/Jul/2022 11:46:41] "GET /static/css/main.css HTTP/1.1" 200 36064
+[24/Jul/2022 11:46:41] "GET /static/images/pic05.jpg HTTP/1.1" 200 5560
+[24/Jul/2022 11:46:41] "GET /static/js/jquery.min.js HTTP/1.1" 200 89501
+[24/Jul/2022 11:46:41] "GET /static/js/util.js%22 HTTP/1.1" 404 1808
+[24/Jul/2022 11:46:41] "GET /static/js/breakpoints.min.js HTTP/1.1" 200 2438
+[24/Jul/2022 11:46:41] "GET /static/js/browser.min.js HTTP/1.1" 200 2050
+[24/Jul/2022 11:46:41] "GET /static/js/main.js HTTP/1.1" 200 4227
+[24/Jul/2022 11:46:41] "GET /static/css/fontawesome-all.min.css HTTP/1.1" 200 59401
+[24/Jul/2022 11:46:41] "GET /static/css/images/bg.jpg HTTP/1.1" 200 20035
+[24/Jul/2022 11:46:41] "GET /static/css/images/overlay.png HTTP/1.1" 200 3535
+[24/Jul/2022 11:46:41] "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 78268
+[24/Jul/2022 11:46:41] "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 13224
+Internal Server Error: /result/
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/srv/finalpjt_django/main/views.py", line 21, in main_result
+    price = predict_price(title, content)
+  File "/srv/finalpjt_django/main/models.py", line 229, in predict_price
+    return model.predict(lst_padded)
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/tensorflow/python/eager/execute.py", line 58, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InternalError:  Attempting to perform BLAS operation using StreamExecutor without BLAS support
+	 [[node model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/MatMul
+ (defined at /home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/layers/core/dense.py:202)
+]] [Op:__inference_predict_function_3090]
+
+Errors may have originated from an input operation.
+Input Source operations connected to node model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/MatMul:
+In[0] model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/Reshape:	
+In[1] model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/ReadVariableOp:
+
+Operation defined at: (most recent call last)
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/threading.py", line 930, in _bootstrap
+>>>     self._bootstrap_inner()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+>>>     self.run()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/threading.py", line 910, in run
+>>>     self._target(*self._args, **self._kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/socketserver.py", line 683, in process_request_thread
+>>>     self.finish_request(request, client_address)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/socketserver.py", line 360, in finish_request
+>>>     self.RequestHandlerClass(request, client_address, self)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/socketserver.py", line 747, in __init__
+>>>     self.handle()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/servers/basehttp.py", line 178, in handle
+>>>     self.handle_one_request()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/servers/basehttp.py", line 201, in handle_one_request
+>>>     handler.run(self.server.get_app())
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/wsgiref/handlers.py", line 137, in run
+>>>     self.result = application(self.environ, self.start_response)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/contrib/staticfiles/handlers.py", line 76, in __call__
+>>>     return self.application(environ, start_response)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/wsgi.py", line 133, in __call__
+>>>     response = self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/base.py", line 130, in get_response
+>>>     response = self._middleware_chain(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+>>>     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+>>> 
+>>>   File "/srv/finalpjt_django/main/views.py", line 21, in main_result
+>>>     price = predict_price(title, content)
+>>> 
+>>>   File "/srv/finalpjt_django/main/models.py", line 229, in predict_price
+>>>     return model.predict(lst_padded)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1789, in predict
+>>>     tmp_batch_outputs = self.predict_function(iterator)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1621, in predict_function
+>>>     return step_function(self, iterator)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1611, in step_function
+>>>     outputs = model.distribute_strategy.run(run_step, args=(data,))
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1604, in run_step
+>>>     outputs = model.predict_step(data)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1572, in predict_step
+>>>     return self(x, training=False)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/functional.py", line 451, in call
+>>>     return self._run_internal_graph(
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/functional.py", line 589, in _run_internal_graph
+>>>     outputs = node.layer(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/srv/finalpjt_django/main/models.py", line 110, in call
+>>>     attn_output = self.att(inputs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/srv/finalpjt_django/main/models.py", line 68, in call
+>>>     query = self.query_dense(inputs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/layers/core/dense.py", line 202, in call
+>>>     outputs = tf.tensordot(inputs, self.kernel, [[rank - 1], [0]])
+>>> 
+[24/Jul/2022 11:47:01] "POST /result/ HTTP/1.1" 500 121719
+[24/Jul/2022 11:47:10,435] - Broken pipe from ('114.203.107.84', 64834)
+
+[24/Jul/2022 11:47:10,436] - Broken pipe from ('114.203.107.84', 64829)
+
+[24/Jul/2022 11:47:10,437] - Broken pipe from ('114.203.107.84', 64837)
+
+[24/Jul/2022 11:47:10,437] - Broken pipe from ('114.203.107.84', 64838)
+
+[24/Jul/2022 11:47:10,437] - Broken pipe from ('114.203.107.84', 64835)
+
+[24/Jul/2022 12:31:15] "GET / HTTP/1.1" 200 17688
+[24/Jul/2022 12:31:15] "GET /static/css/main.css HTTP/1.1" 304 0
+[24/Jul/2022 12:31:15] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[24/Jul/2022 12:31:15] "GET /static/js/browser.min.js HTTP/1.1" 304 0
+[24/Jul/2022 12:31:15] "GET /static/css/fontawesome-all.min.css HTTP/1.1" 304 0
+[24/Jul/2022 12:31:15] "GET /static/js/breakpoints.min.js HTTP/1.1" 304 0
+[24/Jul/2022 12:31:15] "GET /static/js/util.js%22 HTTP/1.1" 404 1808
+[24/Jul/2022 12:31:15] "GET /static/js/main.js HTTP/1.1" 304 0
+[24/Jul/2022 12:31:15] "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+[24/Jul/2022 12:31:15] "GET /static/images/pic05.jpg HTTP/1.1" 304 0
+[24/Jul/2022 12:31:15] "GET /static/css/images/overlay.png HTTP/1.1" 304 0
+[24/Jul/2022 12:31:15] "GET /static/css/images/bg.jpg HTTP/1.1" 304 0
+2022-07-24 12:32:38.573343: F tensorflow/core/platform/statusor.cc:33] Attempting to fetch value instead of handling error INTERNAL: failed initializing StreamExecutor for CUDA device ordinal 0: INTERNAL: failed call to cuDevicePrimaryCtxRetain: CUDA_ERROR_OUT_OF_MEMORY: out of memory; total memory reported: 15691415552
+[24/Jul/2022 12:32:46] "GET / HTTP/1.1" 200 17688
+[24/Jul/2022 12:32:46] "GET /static/js/util.js%22 HTTP/1.1" 404 1808
+Internal Server Error: /result/
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/srv/finalpjt_django/main/views.py", line 21, in main_result
+    price = predict_price(title, content)
+  File "/srv/finalpjt_django/main/models.py", line 229, in predict_price
+    return model.predict(lst_padded)
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/tensorflow/python/eager/execute.py", line 58, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InternalError:  Attempting to perform BLAS operation using StreamExecutor without BLAS support
+	 [[node model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/MatMul
+ (defined at /home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/layers/core/dense.py:202)
+]] [Op:__inference_predict_function_3090]
+
+Errors may have originated from an input operation.
+Input Source operations connected to node model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/MatMul:
+In[0] model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/Reshape:	
+In[1] model_8/transformer_block_1/multi_head_attention_1/dense_6/Tensordot/ReadVariableOp:
+
+Operation defined at: (most recent call last)
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/threading.py", line 930, in _bootstrap
+>>>     self._bootstrap_inner()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+>>>     self.run()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/threading.py", line 910, in run
+>>>     self._target(*self._args, **self._kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/socketserver.py", line 683, in process_request_thread
+>>>     self.finish_request(request, client_address)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/socketserver.py", line 360, in finish_request
+>>>     self.RequestHandlerClass(request, client_address, self)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/socketserver.py", line 747, in __init__
+>>>     self.handle()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/servers/basehttp.py", line 178, in handle
+>>>     self.handle_one_request()
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/servers/basehttp.py", line 201, in handle_one_request
+>>>     handler.run(self.server.get_app())
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/wsgiref/handlers.py", line 137, in run
+>>>     self.result = application(self.environ, self.start_response)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/contrib/staticfiles/handlers.py", line 76, in __call__
+>>>     return self.application(environ, start_response)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/wsgi.py", line 133, in __call__
+>>>     response = self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/base.py", line 130, in get_response
+>>>     response = self._middleware_chain(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/utils/deprecation.py", line 117, in __call__
+>>>     response = response or self.get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+>>>     response = get_response(request)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+>>>     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+>>> 
+>>>   File "/srv/finalpjt_django/main/views.py", line 21, in main_result
+>>>     price = predict_price(title, content)
+>>> 
+>>>   File "/srv/finalpjt_django/main/models.py", line 229, in predict_price
+>>>     return model.predict(lst_padded)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1789, in predict
+>>>     tmp_batch_outputs = self.predict_function(iterator)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1621, in predict_function
+>>>     return step_function(self, iterator)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1611, in step_function
+>>>     outputs = model.distribute_strategy.run(run_step, args=(data,))
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1604, in run_step
+>>>     outputs = model.predict_step(data)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/training.py", line 1572, in predict_step
+>>>     return self(x, training=False)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/functional.py", line 451, in call
+>>>     return self._run_internal_graph(
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/functional.py", line 589, in _run_internal_graph
+>>>     outputs = node.layer(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/srv/finalpjt_django/main/models.py", line 110, in call
+>>>     attn_output = self.att(inputs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/srv/finalpjt_django/main/models.py", line 68, in call
+>>>     query = self.query_dense(inputs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/engine/base_layer.py", line 1083, in __call__
+>>>     outputs = call_fn(inputs, *args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 92, in error_handler
+>>>     return fn(*args, **kwargs)
+>>> 
+>>>   File "/home/ubuntu/anaconda3/envs/django/lib/python3.9/site-packages/keras/layers/core/dense.py", line 202, in call
+>>>     outputs = tf.tensordot(inputs, self.kernel, [[rank - 1], [0]])
+>>> 
+[24/Jul/2022 12:33:02] "POST /result/ HTTP/1.1" 500 122283
+[24/Jul/2022 12:50:28] "GET / HTTP/1.1" 200 17688
+[24/Jul/2022 12:50:28] "GET /static/css/main.css HTTP/1.1" 304 0
+[24/Jul/2022 12:50:28] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[24/Jul/2022 12:50:28] "GET /static/js/browser.min.js HTTP/1.1" 304 0
+[24/Jul/2022 12:50:28] "GET /static/css/fontawesome-all.min.css HTTP/1.1" 304 0
+[24/Jul/2022 12:50:28] "GET /static/js/breakpoints.min.js HTTP/1.1" 304 0
+[24/Jul/2022 12:50:28] "GET /static/js/util.js%22 HTTP/1.1" 404 1808
+[24/Jul/2022 12:50:28] "GET /static/js/main.js HTTP/1.1" 304 0
+[24/Jul/2022 12:50:28] "GET /static/images/pic05.jpg HTTP/1.1" 304 0
+[24/Jul/2022 12:50:28] "GET /static/css/images/overlay.png HTTP/1.1" 304 0
+[24/Jul/2022 12:50:28] "GET /static/css/images/bg.jpg HTTP/1.1" 304 0
+[24/Jul/2022 12:50:28] "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 24, 2022 - 10:27:19
+Django version 3.2.5, using settings 'final_pjt.settings'
+Starting development server at http://0:8980/
+Quit the server with CONTROL-C.
+  File "manage.py", line 17
+    ) from exc
+         ^
+SyntaxError: invalid syntax

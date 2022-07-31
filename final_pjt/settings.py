@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-9x$vmpqcuter$*oh*_)j7k+9opka=82#8z-v^eny^x1m$)2f#=
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "54.64.211.139"
+    "54.64.211.139",
+    "ec2-54-64-211-139.ap-northeast-1.compute.amazonaws.com"
 ]
 
 
@@ -72,7 +73,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'final_pjt.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -124,9 +124,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
+os.path.join(BASE_DIR, "static")
 ]
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

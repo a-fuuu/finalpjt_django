@@ -1,0 +1,12 @@
+[I 20:02:41.950 NotebookApp] Using EnvironmentKernelSpecManager...
+[I 20:02:41.950 NotebookApp] Started periodic updates of the kernel list (every 3 minutes).
+[I 20:02:42.163 NotebookApp] The port 8938 is already in use, trying another port.
+[I 20:02:42.163 NotebookApp] Serving notebooks from local directory: /srv/finalpjt_django/main
+[I 20:02:42.163 NotebookApp] Jupyter Notebook 6.4.3 is running at:
+[I 20:02:42.163 NotebookApp] http://ip-172-31-16-250:8939/
+[I 20:02:42.163 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 20:02:42.167 NotebookApp] Starting initial scan of virtual environments...
+[I 20:02:43.712 NotebookApp] Found new kernels in environments: conda_mxnet_latest_p37, conda_tensorflow_p37, conda_aws_neuron_tensorflow_p36, conda_python3, conda_aws_neuron_mxnet_p36, conda_amazonei_mxnet_p36, conda_pytorch_latest_p37, conda_pytorch_p37, conda_aws_neuron_pytorch_p36, conda_mxnet_p36, conda_tensorflow2_latest_p37, conda_tensorflow2_p37, conda_anaconda3
+[C 22:00:01.269 NotebookApp] received signal 15, stopping
+[I 22:00:01.271 NotebookApp] Shutting down 0 kernels
+[I 22:00:01.277 NotebookApp] Shutting down 0 terminals

@@ -1475,6 +1475,7 @@ input, select, textarea {
 	form input[type="password"],
 	form select,
 	form textarea {
+		font-family: 'Jua', sans-serif;
 		-webkit-appearance: none;
 		border: 0;
 		background: #f4f4f4;
@@ -1588,6 +1589,7 @@ input, select, textarea {
 	input[type="reset"],
 	button,
 	.button {
+		font-family: 'Jua', sans-serif;
 		-moz-transition: background-color .25s ease-in-out;
 		-webkit-transition: background-color .25s ease-in-out;
 		-ms-transition: background-color .25s ease-in-out;
@@ -1954,6 +1956,7 @@ input, select, textarea {
 		-ms-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 		transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 		border-radius: 40px;
+		font-family: 'Jua', sans-serif;
 	}
 
 		#main > .panel {
@@ -2190,3 +2193,19 @@ input, select, textarea {
 			}
 
 		}
+
+		div.myTableauViz {
+			width: 1650px;
+			margin-left : auto;
+			margin-right: auto;
+		  }
+		  .tab-content {
+			background: rgb(254, 254, 254);
+			line-height: 25px;
+			border-top: 5px solid #006950;
+			border-bottom: 5px solid #006950;
+			border-left: none;
+			border-right: none;
+			padding: 30px 25%; /* reverted back to 25% */
+		  /* update 2 ingnore: changed 25% to 0, top/bottom padding only */
+		  }

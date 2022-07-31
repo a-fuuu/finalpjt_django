@@ -9,13 +9,44 @@
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 		<noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
-        <script>
-        // In your Javascript
-        $(document).ready(function() {
-            $('.js-example-basic-single').select2();
-        });
-        </script>
+        
+		<script>
+			function go(){
+				var a = document.forms['Form'].title.value;
+				var b = document.forms['Form'].content.value;
+				var c = document.forms['Form'].category.value;
+				if (a == '' || a == null){
+					alert('판매글의 제목을 입력해주세요');
+					document.forms['Form'].title.focus();
+					return false;
+				}
+				if (b == '' || b == null){
+					alert('제품의 상태를 입력해주세요');
+					document.forms['Form'].content.focus();
+					return false;
+				}
+				if (a.length < 7) {
+					alert("제목을 좀 더 상세하게 써주세요(최소 7자 이상)")
+					document.forms['Form'].title.focus();
+					return false;
+				}
+				if (b.length < 10) {
+					alert("제품의 상태를 좀 더 상세하게 적어주세요(최소 10자 이상)")
+					document.forms['Form'].content.focus();
+					return false;
+				}
+				if (c == '' || c == null){
+					alert('스마트폰 기종을 선택해주세요');
+					document.forms['Form'].category.focus();
+					return false;
+				}
+			}
+
+		</script>
 	</head>
 	<body class="is-preload">
 
@@ -35,25 +66,26 @@
 							<article id="home" class="panel intro">
 								<header>
 									<h1>안녕하세요!</h1>
-									<p style="font-size: 15px">
+									<p style="font-size: 17px">
                                         텍스트를 기반으로 중고 스마트폰의 판매 적정가를
                                         책정해주는 서비스입니다.
                                     </p>
 								</header>
 								<a href="#contact" class="jumplink pic">
 									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-									<img src="{% static 'images/pic05.jpg' %}" alt="" />
+									<img src="{% static 'images/smartphone.png' %}" style="width: 100%; height: 100%;" alt="" />
 								</a>
 							</article>
-
+						
 						<!-- Contact -->
 							<article id="contact" class="panel">
+								<div>
 								<header>
-                                    <p>
-                                        판매하시려는 제품의 가격 책정을 위해 실제로 판매글을 쓰시는 것처럼 작성해주세요!
-                                    </p>
+                                  
+                                    판매하시려는 제품의 가격 책정을 위해 실제로 판매글을 쓰시는 것처럼 작성해주세요!
+                                
 								</header>
-								<form action="result/" method="post">
+								<form name='Form'action="result/" method="post" >
                                     {% csrf_token %}
 									<div>
 										<div class="row">
@@ -61,6 +93,7 @@
 												<input type="text" name="title" placeholder="판매글의 제목" />
 											</div>
 											<div class="col-12">
+												스마트폰 기종 선택
                                                 <select name="category">
                                                     {% for model, code in my_list %}
                                                         <option value="{{ model }}">{{ model }}</option>
@@ -71,67 +104,26 @@
 												<textarea name="content" placeholder="제품 상태 설명글 (본문)" rows="6"></textarea>
 											</div>
 											<div class="col-12">
-                                                <input type="submit" value="가격예측하기" />
+                                                <input onclick="return go()" type="submit" id = 'submit' value="가격예측하기" />
 											</div>
 										</div>
 									</div>
 								</form>
 							</article>
 
-
                         <!-- Work -->
-							<article id="work" class="panel">
-{#								<header>#}
-{#									<h2>대시보드</h2>#}
-{#								</header>#}
-{#								<p>#}
-{#                                    중고거래 대표 플랫폼인 중고나라, 당근마켓, 번개장터의 스마트폰 거래현황판입니다.#}
-{#								</p>#}
-								<section>
-									<div class="row">
-										<div class='tableauPlaceholder' id='viz1658497968218' style='position: relative'>
-                                            <noscript>
-                                                <a href='#'>
-                                                    <img alt='대시보드 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashboard_16584728395960&#47;1&#47;1_rss.png' style='border: none' />
-                                                </a>
-                                            </noscript>
-                                            <object class='tableauViz'  style='display:none;'>
-                                                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                                                <param name='embed_code_version' value='3' />
-                                                <param name='site_root' value='' />
-                                                <param name='name' value='Dashboard_16584728395960&#47;1' />
-                                                <param name='tabs' value='no' />
-                                                <param name='toolbar' value='yes' />
-                                                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashboard_16584728395960&#47;1&#47;1.png' />
-                                                <param name='animate_transition' value='yes' />
-                                                <param name='display_static_image' value='yes' />
-                                                <param name='display_spinner' value='yes' />
-                                                <param name='display_overlay' value='yes' />
-                                                <param name='display_count' value='yes' />
-                                                <param name='language' value='ko-KR' />
-                                                <param name='filter' value='publish=yes' />
-                                            </object>
-                                        </div>
-                                        <script type='text/javascript'>
-                                            var divElement = document.getElementById('viz1658497968218');
-                                            var vizElement = divElement.getElementsByTagName('object')[0];
-                                            {#if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1600px';vizElement.style.height='927px';}#}
-                                            {#else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1600px';vizElement.style.height='927px';}#}
-                                            {#else { vizElement.style.width='100%';vizElement.style.height='727px';}#}
-                                            vizElement.style.width='1600px';
-                                            vizElement.style.height='927px';
-                                            var scriptElement = document.createElement('script');
-                                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                                            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                                        </script>
-									</div>
-								</section>
+							<article id="work" class="panel dashboard">
+								<div id="test" class="myTableauViz">
+									<section>
+										<div class='tableauPlaceholder' id='viz1659013519994' style='position: relative'><noscript><a href='#'><img alt='대시보드 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashboard_16590131884880&#47;2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='views&#47;Dashboard_16590131884880&#47;2?:language=ko-KR&amp;:embed=true&amp;publish=yes' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashboard_16590131884880&#47;2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='ko-KR' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1659013519994');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='790px';vizElement.style.height='817px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+									</section>
+								</div>
 							</article>
                     </div>
 				<!-- Footer -->
 					<div id="footer">
 						<ul class="copyright">
-							<li>&copy; Untitled.</li>
+							<li>&copy; 얼마에팔조 </li>
                             <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
 					</div>
@@ -143,7 +135,12 @@
 			<script src="{% static 'js/jquery.min.js' %}"></script>
 			<script src="{% static 'js/browser.min.js' %}"></script>
 			<script src="{% static 'js/breakpoints.min.js' %}"></script>
-			<script src="{% static 'js/util.js"' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
 			<script src="{% static 'js/main.js' %}"></script>
+			<script>
+					function refreshPage(){
+						window.location.reload();
+					} 
+			</script>
 	</body>
 </html>

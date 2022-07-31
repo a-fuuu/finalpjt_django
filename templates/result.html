@@ -8,6 +8,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
 		<noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 	</head>
 	<body class="is-preload">
 
@@ -23,54 +26,25 @@
 					<div id="main">
 
 						<!-- Contact -->
-							<article id="contact" class="panel">
-								<header>
-									<h2>{{ category }}의 </h2>
-								</header>
-                                    <div>
-                                        <div class="row">
-											<div class="col-12">
-                                                제목과 본문을 딥러닝 모델을 통해 분석한 결과
-                                                예측된 가격은 {{ price }}원 입니다.
-                                            </div>
+						<article id="contact" class="panel">
+                            <header>
+                                <h2>{{ category }}의 </h2>
+                            </header>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            제목과 본문에 대한 AI 분석 결과<br/>
+											적정 가격 구간은 <b>{{ price2 }} ~ {{price1}}</b>원 입니다.
                                         </div>
                                     </div>
-                                <div class='tableauPlaceholder' id='viz1658470665473' style='position: relative'>
-                                    <noscript>
-                                        <a href='#'>
-                                            <img alt='대시보드 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PX&#47;{{ category }}&#47;1_rss.png' style='border: none' />
-                                        </a>
-                                    </noscript>
-                                    <object class='tableauViz'  style='display:none;'>
-                                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                                        <param name='embed_code_version' value='3' />
-                                        <param name='path' value='shared&#47;{{ category }}' />
-                                        <param name='toolbar' value='yes' />
-                                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PX&#47;{{ category }}&#47;1.png' />
-                                        <param name='animate_transition' value='yes' />
-                                        <param name='display_static_image' value='yes' />
-                                        <param name='display_spinner' value='yes' />
-                                        <param name='display_overlay' value='yes' />
-                                        <param name='display_count' value='yes' />
-                                        <param name='language' value='ko-KR' />
-                                        <param name='filter' value='publish=yes' />
-                                    </object>
                                 </div>
-                                <script type='text/javascript'>
-                                    var divElement = document.getElementById('viz1658470665473');
-                                    var vizElement = divElement.getElementsByTagName('object')[0];
-                                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1100px';vizElement.style.height='877px';}
-                                    else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1100px';vizElement.style.height='877px';}
-                                    else { vizElement.style.width='100%';vizElement.style.height='727px';}
-                                    var scriptElement = document.createElement('script');
-                                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                                </script>
 
-                                <br>
+                                {{ graphs1|safe }}  
+
+
                             <div class="row">
                                 <div class="col-12">
-                                    <a href="/">
+                                    <a href="/#contact">
                                         <input type="submit" value="돌아가기" />
                                     </a>
                                 </div>
@@ -91,7 +65,7 @@
 			<script src="{% static 'js/jquery.min.js' %}"></script>
 			<script src="{% static 'js/browser.min.js' %}"></script>
 			<script src="{% static 'js/breakpoints.min.js' %}"></script>
-			<script src="{% static 'js/util.js"' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
 			<script src="{% static 'js/main.js' %}"></script>
 	</body>
 </html>
